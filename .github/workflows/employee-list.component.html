@@ -1,0 +1,39 @@
+<h2> Employee List</h2>
+<div class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search the employee"
+    aria-describedby="search-addon" />
+  <button onclick="search()" type="button" class="btn btn-outline-primary">search</button>
+</div>
+
+
+<table class="table">
+      <thead class="thead-dark">  
+        <tr>
+          <th [appSort]="dataList" data-order="desc" data-name="employeeId" scope="col">Employee Id</th>
+          <th [appSort]="dataList" data-order="desc" data-name="employeeName" scope="col">Employee Name</th>
+          <th [appSort]="dataList" data-order="desc" data-name="employeeDept" scope="col">Employee Dept</th>
+          <th [appSort]="dataList" data-order="desc" data-name="employeeDOJ" scope="col">Employee Date Of Joining</th>
+      </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let data of dataList">
+             <td>{{data.employeeId}}</td> 
+             <td>{{data.employeeName}}</td>
+             <td>{{data.employeeDept}}</td>
+             <td>{{data.employeeDOJ}}</td>
+          </tr>
+      </tbody>
+  </table>
+
+
+<button class="btn btn-primary"
+ onclick="findExp()" style="margin-right: 80px; margin-top: 60px;margin-left: 30px;">Find>2Exp
+</button>
+
+<button class="btn btn-primary"
+onclick="dist()" style="margin-right: 80px; margin-top: 60px;margin-left: 30px;">Distinct</button>
+
+<button class="btn btn-primary"
+onclick="remove()" style="margin-right: 80px; margin-top: 60px;margin-left: 30px;">Remove</button>
+
+
